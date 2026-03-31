@@ -1,1 +1,221 @@
-/* Add your CSS here */
+/* RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  overscroll-behavior: none;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* HEADER / HERO SECTION */
+.hero {
+  background-color: #0071c5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.hero-title {
+  font-family: "Intel Clear", "Intel Clear Pro", Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 8px;
+}
+
+.hero-logo {
+  width: 150px;
+}
+
+/* SUBTITLE BANNER */
+.subtitle-banner {
+  background-color: #00426a;
+  color: white;
+  text-align: center;
+  font-family: "Intel Clear", "Intel Clear Pro", Arial, Helvetica, sans-serif;
+  padding: 12px 30px;
+}
+
+.subtitle-banner p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* TIMELINE SECTION */
+.timeline {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 20px;
+  gap: 20px;
+  scroll-behavior: smooth;
+  flex: 1;
+  align-items: stretch;
+}
+
+/* TIMELINE CARDS */
+.card {
+  flex-shrink: 0;
+  width: 250px;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a1a2e;
+  color: white;
+  border-radius: 12px;
+  padding: 25px 20px;
+  transition: width 0.4s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.35) 70%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  border-radius: 12px;
+}
+
+.card h2,
+.card h3,
+.card p {
+  position: relative;
+}
+
+.card h2 {
+  font-size: 2.2rem;
+  color: #00aeef;
+  margin-bottom: 5px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* HOVER EXPAND EFFECT */
+.card:hover {
+  width: 400px;
+  transform: scale(1.03);
+}
+
+.card:hover p {
+  max-height: 300px;
+  opacity: 1;
+}
+
+/* CARD BACKGROUND IMAGES */
+.card-bg-1968 {
+  background-image: url("img/1968.png");
+}
+
+.card-bg-1971 {
+  background-image: url("img/1971.jpg");
+}
+
+.card-bg-1978 {
+  background-image: url("img/1978.jpg");
+}
+
+.card-bg-1985 {
+  background-image: url("img/1985.jpg");
+}
+
+.card-bg-2006 {
+  background-image: url("img/2006.png");
+}
+
+.card-bg-2020 {
+  background-image: url("img/2020.jpg");
+}
+
+.card-bg-2022 {
+  background-image: url("img/2022.jpeg");
+}
+
+.card-bg-2023 {
+  background-image: url("img/2023.jpeg");
+}
+
+.card-bg-2024 {
+  background-image: url("img/2024.png");
+}
+
+/* SCROLL HINT */
+.scroll-hint {
+  text-align: center;
+  padding: 10px;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  background-color: #f4f4f4;
+  flex-shrink: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 140px;
+  }
+
+  .hero-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: center;
+    padding: 20px 20px;
+  }
+
+  .card {
+    width: 90%;
+    min-height: 280px;
+    flex-shrink: 0;
+  }
+
+  .card p {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .card:hover {
+    width: 90%;
+    transform: none;
+  }
+}
